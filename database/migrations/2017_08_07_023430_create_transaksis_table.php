@@ -18,10 +18,10 @@ class CreateTransaksisTable extends Migration
             $table->integer('karyawan_id')->unsigned();
             $table->integer('konsumen_id')->unsigned();
             $table->integer('barang_id')->unsigned();
+            $table->integer('harga')->unsigned();
             $table->integer('jumlah')->unsigned();
             $table->integer('total')->unsigned();
             $table->date('tgl_pembelian');
-            $table->string('cover')->nullable();
             $table->timestamps();
             $table->foreign('karyawan_id')->references('id')->on('karyawans')->onUpdate('cascade')->onDelete('cascade');
             $table->foreign('konsumen_id')->references('id')->on('konsumens')->onUpdate('cascade')->onDelete('cascade');
