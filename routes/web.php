@@ -20,5 +20,6 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 Route::group(['prefix'=>'admin','middleware'=>['auth']], function() {
 	//Route diisi disini
-	Route::resource('authors', 'AuthorController');
+	Route::resource('karyawan', 'KaryawanController');
+	Route::resource('konsumen', 'KosumenController');
 });

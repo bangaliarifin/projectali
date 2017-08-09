@@ -3,8 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\konsumen;
 
-class AuthorController extends Controller
+class KosumenController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,6 +15,8 @@ class AuthorController extends Controller
     public function index()
     {
         //
+        $konsu = konsumen::all();
+        return view('konsumen.index', compact('konsu'));
     }
 
     /**
@@ -24,6 +27,7 @@ class AuthorController extends Controller
     public function create()
     {
         //
+       return view('konsumen.create');
     }
 
     /**
@@ -35,6 +39,13 @@ class AuthorController extends Controller
     public function store(Request $request)
     {
         //
+         $konsu = new konsumen;
+        $konsu->name = $request->a;
+        $konsu->alamat = $request->b;
+        $konsu->no_hp = $request->c;
+        $konsu->save();
+        return redirect()->route('konsumen.index');
+
     }
 
     /**
@@ -46,6 +57,8 @@ class AuthorController extends Controller
     public function show($id)
     {
         //
+         $konsu = konsumen::findOrFail($id);
+        return view('konsumen.show', compact('konsu'));
     }
 
     /**
@@ -57,6 +70,8 @@ class AuthorController extends Controller
     public function edit($id)
     {
         //
+         $konsu = konsumen::findOrFail($id);
+        return view('konsumen.edit', compact('konsu'));
     }
 
     /**
@@ -69,6 +84,12 @@ class AuthorController extends Controller
     public function update(Request $request, $id)
     {
         //
+         $konsu = konsumen::findOrFail($id);
+        $konsu->name = $request->a;
+        $konsu->alamat = $request->b;
+        $konsu->no_hp = $request->c;
+        $konsu->save();
+        return redirect()->route('konsumen.index');
     }
 
     /**
@@ -80,5 +101,8 @@ class AuthorController extends Controller
     public function destroy($id)
     {
         //
+          $konsu = konsumen::findOrFail($id);
+        $konsu ->delete();
+        return redirect()-route('konsumen.index');
     }
 }
