@@ -101,8 +101,8 @@ class KosumenController extends Controller
     public function destroy($id)
     {
         //
-          $konsu = konsumen::findOrFail($id);
+        $konsu = konsumen::findOrFail($id);
         $konsu ->delete();
-        return redirect()-route('konsumen.index');
+        return redirect()->route('konsumen.index');
     }
 }

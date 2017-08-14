@@ -18,6 +18,7 @@ class CreateBarangsTable extends Migration
             $table->string('nama');
             $table->integer('karyawan_id')->unsigned();
             $table->string('merek');
+            $table->integer('harga')->unsigned();
             $table->integer('jumlah')->unsigned();
             $table->string('cover')->nullable();
             $table->timestamps();

@@ -43,6 +43,9 @@
                         @if (Auth::check())
                             <li><a href="{{ url('/home') }}">Dashboard</a></li>
                             <li><a href="{{ route('karyawan.index') }}"> Karyawan</a></li>
+                             <li><a href="{{ route('konsumen.index') }}"> Kosumen</a></li>
+                             <li><a href="{{ route('barang.index') }}"> Barang</a></li>
+                             <li><a href="{{ route('transaksi.index') }}"> Transaksi</a></li>
                             @endif
                     </ul>
 

@@ -7,8 +7,8 @@ use Illuminate\Database\Eloquent\Model;
 class barang extends Model
 {
     //
-    protected $fillable = ['nama','karyawan_id','merek','jumlah','cover'];
-    protected $visible = ['nama','karyawan_id','merek','jumlah','cover'];
+    protected $fillable = ['nama','karyawan_id','merek','harga','jumlah','cover'];
+    protected $visible = ['nama','karyawan_id','merek','harga','jumlah','cover'];
     public  $timestamps = true;
  	
  	public function karyawan(){

@@ -22,4 +22,6 @@ Route::group(['prefix'=>'admin','middleware'=>['auth']], function() {
 	//Route diisi disini
 	Route::resource('karyawan', 'KaryawanController');
 	Route::resource('konsumen', 'KosumenController');
+	Route::resource('barang', 'BarangController');
+	Route::resource('transaksi', 'TransaksiController');
 });
